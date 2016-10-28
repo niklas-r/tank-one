@@ -4,6 +4,7 @@ var logger = require('morgan');
 var cors = require('cors');
 var bodyParser = require('body-parser')
 var app = express();
+var commands = require('./commands')
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -31,10 +32,13 @@ app.get('/info', (req, res) => {
 });
 
 app.post('/command', (req, res) => {
-  return res.json({
-    command: 'fire'
-  })
+  return res.json(commands.getRandomCommand())
 });
+
+app.get('/command', (req, res) => {
+  return res.send('POST för helvete!')
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
