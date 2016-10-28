@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // CORS
-app.options('*', cors()); // include before other routes
+app.use(cors()); // include before other routes
 
 // API
 app.get('/', (req, res) => {
