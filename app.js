@@ -32,7 +32,8 @@ app.get('/info', (req, res) => {
 });
 
 app.post('/command', (req, res) => {
-  return res.json(commands.getRandomCommand())
+  // return res.json(commands.getRandomCommand())
+  return res.json(commands.runRound(req.body))
 });
 
 app.get('/command', (req, res) => {
