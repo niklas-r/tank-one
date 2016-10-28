@@ -7,8 +7,18 @@ var app = express();
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 
-app.use('/', (req, res, next) => {
-  return res.json({ working: true })
+// API
+app.get('/info', (req, res) => {
+  return res.json({
+    name: 'tank-one',
+    builtBy: 'Awesome people!'
+  })
+});
+
+app.post('/command', (req, res) => {
+  return res.json({
+    command: 'fire'
+  })
 });
 
 // catch 404 and forward to error handler
