@@ -11,7 +11,7 @@ app.use(logger('dev'));
 app.get('/info', (req, res) => {
   return res.json({
     name: 'tank-one',
-    builtBy: 'Awesome people!'
+    owner: 'Awesome people!'
   })
 });
 
